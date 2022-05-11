@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+<h1><%= @restaurant.name %></h1>
+    <%= link_to 'Restaurant List', restaurants_path %>
+  </div>
+</nav>
+<div class="card m-5 p-5">
+<h2>Address: <%= @restaurant.address %></h2>
+<h3>Category: <%= @restaurant.category %></h3>
+<h3>Phone Number: <%= @restaurant.phone_number %></h3>
+<br>
+<br>
+<%# <%= render 'reviews/form' %>
+<br>
+<br>
+<%= link_to "Add a Review", new_restaurant_review_path(@restaurant)  %>
+<%# <%= link_to "Check Reviews", restaurant_reviews_path(@restaurant)  %>
+</div>
+<div class="card m-5 p-5">
+<h1>Reviews</h1>
+<ul>
+<% @restaurant.reviews.each do |review| %>
+  <li class="card m-5 p-5"><%= review.content %> Ratings: (<%= review.rating %>)</li>
+<% end %>
+</ul>
+</div>

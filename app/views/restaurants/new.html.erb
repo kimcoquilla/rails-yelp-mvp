@@ -1,0 +1,9 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+<h1>Add New Restaurant</h1>
+    <%= link_to 'Restaurant List', restaurants_path %>
+  </div>
+</nav>
+<div class="card m-5 p-5">
+<%= render 'form', restaurant: @restaurant %>
+</div>

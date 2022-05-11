@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+<h1>Reviews</h1>
+    <%= link_to 'Restaurant List', restaurants_path %>
+  </div>
+</nav>
+<div class="container">
+<ul>
+<% @reviews.each do |review| %>
+  <li class="card m-5 p-5"><%= review.content %> Ratings: (<%= review.rating %>)</li>
+<% end %>
+</ul>
+<%= link_to "Back to Restaurant", restaurant_path(@restaurant) %>
+</div>
